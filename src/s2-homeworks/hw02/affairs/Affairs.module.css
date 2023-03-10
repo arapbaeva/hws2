@@ -53,3 +53,12 @@
     flex-wrap: wrap;
     max-width: 450px;
 }
+
+.container {
+    width: 1280px;
+    height: 373px;
+    margin-left: 200px;
+    margin-top: 600px;
+}
+
+

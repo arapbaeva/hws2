@@ -3,22 +3,18 @@
 }
 
 
-
 .hwTitle {
-    position: absolute;
-    width: 165px;
-    height: 27px;
+    display: flex;
+    justify-content: center;
     left: 70px;
-    top: 131px;
-
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
     line-height: 27px;
-    /* identical to box height */
-
-
     color: #000000;
-
 }
+
+
+
+
