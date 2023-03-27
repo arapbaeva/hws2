@@ -44,7 +44,6 @@ const HW3 = () => {
                 <GreetingContainer
                     users={users}
                     addUserCallback={addUserCallback}
-
                 />
             </div>
         </div>
