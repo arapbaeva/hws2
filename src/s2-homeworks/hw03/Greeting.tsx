@@ -50,16 +50,16 @@ const Greeting: React.FC<GreetingPropsType> = (
                         {error}
                     </div>
                 </div>
-
-                <button
-                    id={'hw3-button'}
-                    onClick={addUser}
-                    className={s.button}
-                    disabled={!name.trim()}
-                >
-                    add
-                </button>
             </div>
+
+            <button
+                id={'hw3-button'}
+                onClick={addUser}
+                className={s.button}
+                disabled={!name.trim()}
+            >
+                add
+            </button>
 
             {lastUserName && (
                 <div className={s.greeting}>
