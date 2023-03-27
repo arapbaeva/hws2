@@ -8,25 +8,26 @@ type GreetingContainerPropsType = {
     addUserCallback: (name: string) => void
 }
 
-export const pureAddUser = (name: string, setError: any, setName: (name:string)=>void, addUserCallback: (name: string) => void) => {
+export const pureAddUser = (name: string, setError: any, setName: (name: string) => void, addUserCallback: (name: string) => void) => {
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
-    if(name.trim() === ''){
-        setError('Ошибка! Введите имя!')
-    } else {
+    if (name.trim()) {
+        setName(name.trim())
         addUserCallback(name.trim())
         setName('')
+    } else {
+        setError('Ошибка! Введите имя!')
     }
 }
 
 export const pureOnBlur = (name: string, setError: any) => {
-    if(!name.trim()) {
+    if (!name.trim()) {
         setError('Ошибка! Введите имя!')
     } else {
         name.trim()
     }
 }
 
-export const pureOnEnter = (e: React.KeyboardEvent<HTMLInputElement>, addUser: ()=>void) => {
+export const pureOnEnter = (e: React.KeyboardEvent<HTMLInputElement>, addUser: () => void) => {
     if (e.key === 'Enter') {
         addUser()
     }// если нажата кнопка Enter - добавить
@@ -58,7 +59,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     }
 
     const totalUsers = users.length// need to fix
-    const lastUserName = users.length ? users[users.length-1].name : ''
+    const lastUserName = users.length ? users[users.length - 1].name : ''
 
     return (
         <Greeting
