@@ -19,12 +19,12 @@ import GreetingContainer from './GreetingContainer'
 
 // types
 export type UserType = {
-    _id: number
+    _id: string
     name: string
 }
 
 export const pureAddUserCallback = (name: string, setUsers: any, users: UserType[]) => {
-    const user = { _id: 1, name: name}
+    const user: UserType = { _id: v1(), name}
     setUsers([...users, user])
 }
 

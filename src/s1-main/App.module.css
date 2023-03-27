@@ -2,11 +2,11 @@
 
 }
 
-
 .hwTitle {
     display: flex;
-    justify-content: center;
-    left: 70px;
+  position: relative;
+  padding: 50px;
+    align-items: center;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 600;

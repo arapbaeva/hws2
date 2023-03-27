@@ -66,7 +66,7 @@ function HW2() {
 
     return (
         <div id={'hw2'}>
-            <div className={s2.hw}>
+            <div className={s2.hwTitle}>
                 <Affairs
                     data={filteredAffairs}
                     setFilter={setFilter}

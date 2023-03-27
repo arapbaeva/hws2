@@ -2,15 +2,28 @@
 }
 
 .disabled {
+    width: 133px;
+    height: 30px;
+    background: #004D99;
+    opacity: 0.5;
+    border-radius: 3px;
 }
 
 .secondary {
 }
 
 .default {
+    width: 132px;
+    height: 30px;
+      background: #0066CC;
+    border-radius: 3px;
 }
 
 .red {
+    width: 129px;
+    height: 30px;
+    background: #CC1439;
+    border-radius: 3px;
 }
 
 .default:hover {
