@@ -29,7 +29,9 @@ export const pureAddUserCallback = (name: string, setUsers: any, users: UserType
 }
 
 const HW3 = () => {
-    const [users, setUsers] = useState<UserType[]>([])
+    const [users, setUsers] = useState<UserType[]>([
+        {_id: v1(), name: "Programmer"}
+    ])
 
     const addUserCallback = (name: string) => {
         pureAddUserCallback(name, setUsers, users)
