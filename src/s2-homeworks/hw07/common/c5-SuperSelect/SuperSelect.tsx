@@ -4,6 +4,8 @@ import React, {
     ChangeEvent,
 } from 'react'
 import s from './SuperSelect.module.css'
+import {Simulate} from "react-dom/test-utils";
+import change = Simulate.change;
 
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>,
     HTMLSelectElement>
@@ -35,6 +37,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
         // делают студенты
+        onChange?.(e)
         onChangeOption && onChangeOption(+e.currentTarget.value)
     }
 
