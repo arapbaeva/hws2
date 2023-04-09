@@ -42,12 +42,12 @@ const HW13 = () => {
                 setText(res.data.errorText)
             })
             .catch((e) => {
-               if(e.response.status === 500) {
+               if(e.response.status) {
                    setCode(`'Код' ${e.response.status}`)
                    setImage(error500)
                    setInfo(e.response.data.info)
                    setText(e.response.data.errorText)
-               } else if (e.response.status === 400){
+               } else if (e.response.status){
                    setCode(`'Код' ${e.response.status}`)
                    setImage(error400)
                    setInfo(e.response.data.info)
