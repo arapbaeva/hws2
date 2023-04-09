@@ -42,12 +42,19 @@ const HW13 = () => {
                 setText(res.data.errorText)
             })
             .catch((e) => {
-               if(e.response.status) {
+               if(e.response.status === 400) {
                    setCode(`Ошибка ${e.response.status}!!`)
-                   setImage(e.response.status === 500 ? error500 : error400)
+                   setImage(error400)
                    setInfo(e.response.data.info)
                    setText(e.response.data.errorText)
-               } else {
+               } else if(e.response.status === 400){
+                   setCode(`Ошибка ${e.response.status}!!`)
+                   console.log(e.response.status)
+                   setImage(error500)
+                   setInfo(e.response.data.info)
+                   setText(e.response.data.errorText)
+               }
+               else {
                    setImage(errorUnknown)
                    setCode('Error')
                    setInfo(e.name)
