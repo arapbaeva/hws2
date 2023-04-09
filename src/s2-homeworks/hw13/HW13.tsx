@@ -39,7 +39,7 @@ const HW13 = () => {
                 setImage(success200)
                 // дописать
                 setInfo(res.data.info)
-                setText(res.statusText)
+                setText(res.data.errorText)
             })
             .catch((e) => {
                if(e.response.status === 500) {
@@ -82,7 +82,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={info==='...loading'}
                     >
                         Send false
                     </SuperButton>
