@@ -8,6 +8,7 @@ import error400 from './images/400.svg'
 import error500 from './images/500.svg'
 import errorUnknown from './images/error.svg'
 
+
 /*
 * 1 - дописать функцию send
 * 2 - дизэйблить кнопки пока идёт запрос
@@ -20,28 +21,43 @@ const HW13 = () => {
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
 
+
     const send = (x?: boolean | null) => () => {
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+                : "https://samurai.it-incubator.io/api/3.0/homework/test"
 
         setCode('')
         setImage('')
         setText('')
         setInfo('...loading')
-
         axios
             .post(url, {success: x})
             .then((res) => {
-                setCode('Код 200!')
+                setCode(`'Код' ${res.status}`)
                 setImage(success200)
                 // дописать
-
+                setInfo(res.data.info)
+                setText(res.statusText)
             })
             .catch((e) => {
-                // дописать
-
+               if(e.response.status === 500) {
+                   setCode(`'Код' ${e.response.status}`)
+                   setImage(error500)
+                   setInfo(e.response.data.info)
+                   setText(e.response.data.errorText)
+               } else if (e.response.status === 400){
+                   setCode(`'Код' ${e.response.status}`)
+                   setImage(error400)
+                   setInfo(e.response.data.info)
+                   setText(e.response.data.errorText)
+               } else {
+                   setImage(errorUnknown)
+                   setCode('Error')
+                   setInfo(e.name)
+                   setText(e.message)
+               }
             })
     }
 
