@@ -44,12 +44,7 @@ const HW13 = () => {
             .catch((e) => {
                if(e.response.status) {
                    setCode(`'Код' ${e.response.status}`)
-                   setImage(error500)
-                   setInfo(e.response.data.info)
-                   setText(e.response.data.errorText)
-               } else if (e.response.status){
-                   setCode(`'Код' ${e.response.status}`)
-                   setImage(error400)
+                   setImage(e.response.status === 500 ? error500 : error400)
                    setInfo(e.response.data.info)
                    setText(e.response.data.errorText)
                } else {
