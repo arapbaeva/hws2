@@ -31,7 +31,7 @@ const HW14 = () => {
     const [techs, setTechs] = useState<string[]>([])
 
     const sendQuery = (value: string) => {
-        setLoading(true)
+        setLoading(false)
         getTechs(value)
             .then((res) => {
                 // сохранить пришедшие данные
@@ -43,6 +43,7 @@ const HW14 = () => {
 
     const onChangeText = (value: string) => {
         setFind(value)
+        setLoading(true)
         // делает студент
         console.log(value)
         // добавить/заменить значение в квери урла
