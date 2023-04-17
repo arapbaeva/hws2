@@ -47,8 +47,9 @@ const HW14 = () => {
         console.log(value)
         // добавить/заменить значение в квери урла
         // setSearchParams(
-            setSearchParams(value, {replace:true})
-        console.log(searchParams)
+            setSearchParams({find:value})
+
+        console.log({find:value})
 
         //
     }
